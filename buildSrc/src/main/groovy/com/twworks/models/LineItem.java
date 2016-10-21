@@ -12,6 +12,10 @@ package com.twworks.models;
 public class LineItem {
 
     private Product product;
+
     private int quantity;
 
+    public float price() {
+        return product.getPrice() * quantity;
+    }
 }

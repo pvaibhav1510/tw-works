@@ -5,8 +5,8 @@
  */
 package com.twworks.models;
 
-import com.jcraft.jsch.HASH;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,7 +15,17 @@ import java.util.Map;
  */
 public class Order {
 
-    private Map<Product, Integer> items = new HashMap<>();
-    private String orderId;
+    private List<LineItem> lineItems;
+
+    public float total() {
+        if (lineItems == null) {
+            return 0;
+        }
+        float total = 0;
+        for (LineItem li : lineItems) {
+            total += li.price();
+        }
+        return total;
+    }
 
 }
