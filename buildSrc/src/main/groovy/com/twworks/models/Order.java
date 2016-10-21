@@ -23,7 +23,7 @@ public class Order {
         }
         float total = 0;
         for (LineItem li : lineItems) {
-            total += li.price();
+            total += li.itemTotal();
         }
         return total;
     }

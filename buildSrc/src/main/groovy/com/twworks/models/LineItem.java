@@ -15,7 +15,7 @@ public class LineItem {
 
     private int quantity;
 
-    public float price() {
+    public float itemTotal() {
         return product.getPrice() * quantity;
     }
 }
